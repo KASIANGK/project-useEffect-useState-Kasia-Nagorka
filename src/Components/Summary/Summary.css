@@ -17,12 +17,13 @@
     background-image: url(../../assets/sidebar.svg);
     background-size: cover;
     color: white;
-    width: 30vw;
+    width: 20vw;
     /* height: 60vh; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    padding-top: 10%;
 }
 
 .SUMMARY-PRO {

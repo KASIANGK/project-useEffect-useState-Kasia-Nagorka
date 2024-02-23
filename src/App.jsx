@@ -15,10 +15,10 @@ function App() {
   return (
     
       <div className='ALL'>
-        {/* <Personal></Personal> */}
+        <Personal></Personal>
         {/* <Select Arcade={Arcade} Advenced={Advenced} Pro={Pro}></Select> */}
         {/* <Pick></Pick> */}
-        <Summary></Summary>
+        {/* <Summary></Summary> */}
       </div>
     
   )

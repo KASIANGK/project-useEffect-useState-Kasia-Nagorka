@@ -9,17 +9,30 @@
     background-image: url(../../assets/sidebar.svg);
     background-size: cover;
     color: white;
-    width: 50vw;
-    /* height: 60vh; */
+    width: 20vw;
+    height: 63vh;
     display: flex;
     flex-direction: column;
+    border-radius: 15px;
+    background-position: 25% 75%;
+    /* justify-content: center; */
+    /* align-items: center; */
+    
+}
+.STEP-CONTENT {
+    display: flex;
+    width: 32vw;
     justify-content: center;
     align-items: center;
 }
 .STEPS {
-    text-align: center;
     display: flex;
     width: 200px;
+    gap: 20px;
+    align-items: center;
+}
+.STEPS p {
+    font-weight: 700;
 }
 
 .PERSONAL-INFOS {
@@ -30,12 +43,22 @@
     color: navy;
 }
 .STEPS-TXT {
-    width: 200px;
-    text-align: start;
+    width: 50px;
 }
 .STEPS-NUMBER {
     border: white 1px solid;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.STEP h6 {
+    margin-bottom: -15%;
+    font-weight: lighter;
+}
+.STEP h3 {
+    font-size: 0.8em;
 }
