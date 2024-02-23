@@ -59,11 +59,11 @@ function Personal({Sidebar}) {
                     </div>
                     <div className='PERSONAL-INPUT'>
                         <p><strong>Your name is : </strong>{name}</p>
-                        <input type='text' value={name} onChange={(e) => setName(e.target.value)}></input>
+                        <input placeholder='Vingt-Six' type='text' value={name} onChange={(e) => setName(e.target.value)}></input>
                         <p><strong>Your email is : </strong>{email}</p>
-                        <input type='text' value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                        <input placeholder='vingt-six@email.com' type='text' value={email} onChange={(e) => setEmail(e.target.value)}></input>
                         <p><strong>Your phone number is : </strong>{phoneNumber}</p>
-                        <input type='text' value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}></input>
+                        <input placeholder='e.g. +1 234 567 890' type='text' value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}></input>
                     </div>
                     <div className='PERSONAL-BTN'>
                         <button>Next Step</button>
