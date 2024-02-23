@@ -1,0 +1,52 @@
+.SELECT {
+    display: flex;
+    width: 120vh;
+    height: 70vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 17px;
+}
+.SELECT-CHOICE {
+    display: flex;
+    gap: 30px;
+}
+.ABO {
+    border-radius: 17px;
+    border: 1px solid grey;
+}
+.ARCADE {
+    background-color: orange;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.ARCADE img {
+    width: 20px;
+    height: 20px;
+}
+.ADVANCED {
+    background-color: rgb(212, 107, 233);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.ADVANCED img {
+    width: 20px;
+    height: 20px;
+}
+.PRO {
+    background-color: rgb(30, 47, 232);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.PRO img {
+    width: 20px;
+    height: 20px;
+}
+
+.SELECT-TOGGLE-SWITCH {
+    display: flex;
+}
+.SELECT-BTNS {
+    display: flex;
+}
