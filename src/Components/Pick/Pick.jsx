@@ -1,6 +1,7 @@
 import './Pick.css'
+import {useState} from 'react'
 
-function Pick() {
+function Pick () {
     return (
         <div className='PICK'>
             <div className='STEP'>
@@ -50,48 +51,62 @@ function Pick() {
                         <h1>Pick add-ons</h1>
                         <p>Add-ons help enhance your gaming experience.</p>
                     </div>
-                    <div className='SELECT-CHOICE'>
-                        <div className='ABO'>
-                            <div className='ARCADE'>
-                                <img src={Arcade}></img>
+                    <div className='PICK-CHATBOXES'>
+                        <div className='PICKS'>
+                            <div className='CHATBOX'>
+                                <label class="container">
+                                    <input type="checkbox" checked="checked"></input>
+                                    <span class="checkmark"></span>
+                                </label>
                             </div>
-                            <div className='ABO-TXT'>
-                                <p><strong>Arcade</strong></p>
-                                <p>$9/mo</p>
+                            <div className='PICK-TXT'>
+                                <p><strong>Online services</strong></p>
+                                <p>Access to multiplayer games</p>
                             </div>
+                            <div className='PICK-PRICES'>
+                                <p>+$10/yr</p>
+                            </div>    
                         </div>
-                        <div className='ABO'>
-                            <div className='ADVANCED'>
-                                <img src={Arcade}></img>
+                        <div className='PICKS'>
+                            <div className='CHATBOX'>
+                                <label class="container">
+                                    <input type="checkbox" checked="checked"></input>
+                                    <span class="checkmark"></span>
+                                </label>
                             </div>
-                            <div className='ABO-TXT'>
-                                <p><strong>Arcade</strong></p>
-                                <p>$9/mo</p>
+                            <div className='PICK-TXT'>
+                                <p><strong>Online services</strong></p>
+                                <p>Access to multiplayer games</p>
                             </div>
+                            <div className='PICK-PRICES'>
+                                <p>+$10/yr</p>
+                            </div>    
                         </div>
-                        <div className='ABO'>
-                            <div className='PRO'>
-                                <img src={Arcade}></img>
+                        <div className='PICKS'>
+                            <div className='CHATBOX'>
+                                <label class="container">
+                                    <input type="checkbox" checked="checked"></input>
+                                    <span class="checkmark"></span>
+                                </label>
                             </div>
-                            <div className='ABO-TXT'>
-                                <p><strong>Arcade</strong></p>
-                                <p>$9/mo</p>
+                            <div className='PICK-TXT'>
+                                <p><strong>Online services</strong></p>
+                                <p>Access to multiplayer games</p>
                             </div>
+                            <div className='PICK-PRICES'>
+                                <p>+$10/yr</p>
+                            </div>    
                         </div>
                     </div>
-                    <div className='SELECT-TOGGLE-SWITCH'>
-                        <p>Monthly</p>
-                        <p>Button</p>
-                        <p>Yearly</p>
-                    </div>
-                    <div className='SELECT-BTNS'>
-                        <div>Go Back</div>
-                        <div>Next Stop</div>
+                    <div className='PICK-BTNS'>
+                        <button>Go Back</button>
+                        <button>Next Stop</button>
                     </div>
                 </div>
             </div>
         </div>
     )
 }
+
 
 export default Pick

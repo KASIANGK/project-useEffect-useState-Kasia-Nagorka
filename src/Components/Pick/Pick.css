@@ -5,3 +5,25 @@
     background-color: rgb(255, 255, 255);
     border-radius: 17px;
 }
+
+.STEP {
+    background-image: url(../../assets/sidebar.svg);
+    background-size: cover;
+    color: white;
+    width: 20vw;
+    /* height: 60vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.PICKS {
+    display: flex;
+}
+
+
+
+
+
+
