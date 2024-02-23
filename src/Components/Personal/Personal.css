@@ -16,6 +16,8 @@
     width: 100%;
     background-color: white;
     border-radius: 17px;
+    height: 70vh;
+    color: navy;
 }
 .STEPS-NUMBER {
     border: white 1px solid;

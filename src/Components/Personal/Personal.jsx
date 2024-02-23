@@ -45,7 +45,23 @@ function Personal({Sidebar}) {
                 </div>
             </div>
             <div className='PERSONAL-INFOS'>
-
+                <div className='PERSONAL-CONTENT'>
+                    <div className='PERSONAL-TITLE'>
+                        <h1>Personal info</h1>
+                        <p>Please provide your name, email address, and phone number.</p>
+                    </div>
+                    <div className='PERSONAL-INPUT'>
+                        <p><strong>Your name is : </strong></p>
+                        <input type='text'></input>
+                        <p><strong>Your email is : </strong></p>
+                        <input type='text'></input>
+                        <p><strong>Your phone number is : </strong></p>
+                        <input type='text'></input>
+                    </div>
+                    <div className='PERSONAL-BTN'>
+                        <button>Next Step</button>
+                    </div>
+                </div>
             </div>
         </div>
     )
