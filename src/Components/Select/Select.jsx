@@ -6,8 +6,20 @@ function Select({Arcade, Advenced, Pro}) {
     const [moneyArcade, setMoneyArcade] = useState(9)
     const [moneyAdvenced, setMoneyAdvenced] = useState(12)
     const [moneyPro, setMoneyPro] = useState(15)
+    const [year, setYear] = useState(false)
 
-
+    function btnToggle() {
+                if (year) {
+                    setMoneyArcade(9)
+                    setMoneyAdvenced(12)
+                    setMoneyPro(15)
+                } else {
+                    setMoneyArcade(moneyArcade * 10)
+                    setMoneyAdvenced(moneyAdvenced * 10)
+                    setMoneyPro(moneyPro * 10)
+                }
+                setYear(!year)
+            }
 
     return (
         <div className='SELECT'>
@@ -91,7 +103,7 @@ function Select({Arcade, Advenced, Pro}) {
                         <p>Monthly</p>
                         <div className='TOGGLE-BTN'>
                             <label class="switch">
-                            <input type="checkbox"></input>
+                            <input type="checkbox" onClick={btnToggle}></input>
                             <span class="slider round"></span>
                             </label>
                         </div>
@@ -108,3 +120,4 @@ function Select({Arcade, Advenced, Pro}) {
 }
 
 export default Select
+
