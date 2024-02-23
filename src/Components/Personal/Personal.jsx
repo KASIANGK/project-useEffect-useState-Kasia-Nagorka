@@ -1,6 +1,11 @@
-import './Personal.css'
+import { useState } from 'react';
+import './Personal.css';
 
 function Personal({Sidebar}) {
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('')
+
     return (
         <div className='PERSONAL'>
             <div className='STEP'>
@@ -51,12 +56,12 @@ function Personal({Sidebar}) {
                         <p>Please provide your name, email address, and phone number.</p>
                     </div>
                     <div className='PERSONAL-INPUT'>
-                        <p><strong>Your name is : </strong></p>
-                        <input type='text'></input>
-                        <p><strong>Your email is : </strong></p>
-                        <input type='text'></input>
-                        <p><strong>Your phone number is : </strong></p>
-                        <input type='text'></input>
+                        <p><strong>Your name is : </strong>{name}</p>
+                        <input type='text' value={name} onChange={(e) => setName(e.target.value)}></input>
+                        <p><strong>Your email is : </strong>{email}</p>
+                        <input type='text' value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                        <p><strong>Your phone number is : </strong>{phoneNumber}</p>
+                        <input type='text' value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}></input>
                     </div>
                     <div className='PERSONAL-BTN'>
                         <button>Next Step</button>
@@ -64,7 +69,7 @@ function Personal({Sidebar}) {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Personal

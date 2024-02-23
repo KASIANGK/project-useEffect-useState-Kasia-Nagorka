@@ -11,7 +11,16 @@
     color: white;
     width: 50vw;
     /* height: 60vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+.STEPS {
+    text-align: center;
+    display: flex;
+}
+
 .PERSONAL-INFOS {
     width: 100%;
     background-color: white;

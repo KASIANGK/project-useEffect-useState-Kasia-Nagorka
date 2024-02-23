@@ -1,8 +1,8 @@
-import './Select.css'
+import './Pick.css'
 
-function Select({Arcade}) {
+function Pick() {
     return (
-        <div className='SELECT'>
+        <div className='PICK'>
             <div className='STEP'>
                 <div className='STEPS'>
                     <div className='STEPS-NUMBER'>
@@ -44,11 +44,11 @@ function Select({Arcade}) {
                     </div>
                 </div>
             </div>
-            <div className='SELECT-OG'>
-                <div className='SELECT-CONTENT'>
-                    <div className='SELECT-TITLE'>
-                        <h1>Select your plan</h1>
-                        <p>You have the option of monthly or yearly billing.</p>
+            <div className='PICK-OG'>
+                <div className='PICK-CONTENT'>
+                    <div className='PICK-TITLE'>
+                        <h1>Pick add-ons</h1>
+                        <p>Add-ons help enhance your gaming experience.</p>
                     </div>
                     <div className='SELECT-CHOICE'>
                         <div className='ABO'>
@@ -94,4 +94,4 @@ function Select({Arcade}) {
     )
 }
 
-export default Select
+export default Pick
