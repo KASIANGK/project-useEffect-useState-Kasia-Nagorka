@@ -19,6 +19,7 @@
 .STEPS {
     text-align: center;
     display: flex;
+    width: 200px;
 }
 
 .PERSONAL-INFOS {
@@ -27,6 +28,10 @@
     border-radius: 17px;
     height: 70vh;
     color: navy;
+}
+.STEPS-TXT {
+    width: 200px;
+    text-align: start;
 }
 .STEPS-NUMBER {
     border: white 1px solid;

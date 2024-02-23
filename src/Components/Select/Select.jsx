@@ -1,6 +1,14 @@
 import './Select.css'
+import {useState} from 'react'
 
-function Select({Arcade}) {
+function Select({Arcade, Advenced, Pro}) {
+
+    const [moneyArcade, setMoneyArcade] = useState(9)
+    const [moneyAdvenced, setMoneyAdvenced] = useState(12)
+    const [moneyPro, setMoneyPro] = useState(15)
+
+
+
     return (
         <div className='SELECT'>
             <div className='STEP'>
@@ -57,36 +65,41 @@ function Select({Arcade}) {
                             </div>
                             <div className='ABO-TXT'>
                                 <p><strong>Arcade</strong></p>
-                                <p>$9/mo</p>
+                                <p>{moneyArcade}</p>
                             </div>
                         </div>
                         <div className='ABO'>
                             <div className='ADVANCED'>
-                                <img src={Arcade}></img>
+                                <img src={Advenced}></img>
                             </div>
                             <div className='ABO-TXT'>
                                 <p><strong>Arcade</strong></p>
-                                <p>$9/mo</p>
+                                <p>{moneyAdvenced}</p>
                             </div>
                         </div>
                         <div className='ABO'>
                             <div className='PRO'>
-                                <img src={Arcade}></img>
+                                <img src={Pro}></img>
                             </div>
                             <div className='ABO-TXT'>
                                 <p><strong>Arcade</strong></p>
-                                <p>$9/mo</p>
+                                <p>{moneyPro}</p>
                             </div>
                         </div>
                     </div>
                     <div className='SELECT-TOGGLE-SWITCH'>
                         <p>Monthly</p>
-                        <p>Button</p>
+                        <div className='TOGGLE-BTN'>
+                            <label class="switch">
+                            <input type="checkbox"></input>
+                            <span class="slider round"></span>
+                            </label>
+                        </div>
                         <p>Yearly</p>
                     </div>
                     <div className='SELECT-BTNS'>
-                        <div>Go Back</div>
-                        <div>Next Stop</div>
+                        <button>Go Back</button>
+                        <button>Next Stop</button>
                     </div>
                 </div>
             </div>

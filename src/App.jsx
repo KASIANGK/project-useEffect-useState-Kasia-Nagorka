@@ -14,8 +14,8 @@ function App() {
   return (
     
       <div className='ALL'>
-        <Personal></Personal>
-        {/* <Select Arcade={Arcade}></Select> */}
+        {/* <Personal></Personal> */}
+        <Select Arcade={Arcade} Advenced={Advenced} Pro={Pro}></Select>
         {/* <Pick></Pick> */}
       </div>
     
