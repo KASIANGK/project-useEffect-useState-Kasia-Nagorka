@@ -1,14 +1,20 @@
 import './Select.css'
 import {useState} from 'react'
 
-function Select({Arcade, Advenced, Pro, onNext, onBack}) {
+function Select({Arcade, Advenced, Pro, onNext, onBack, toggleYear}) {
 
     const [moneyArcade, setMoneyArcade] = useState(9)
     const [moneyAdvenced, setMoneyAdvenced] = useState(12)
     const [moneyPro, setMoneyPro] = useState(15)
     const [year, setYear] = useState(false)
 
+
+    // const [onlineService, setOnlineService] = useState(1)
+    // const [largerStorage, setLargerStorage] = useState[2]
+    // const [customizableProfile, setCustomizableProfile] = useState[2]
+
     function btnToggle() {
+        toggleYear()
                 if (year) {
                     setMoneyArcade(9)
                     setMoneyAdvenced(12)

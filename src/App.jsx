@@ -11,7 +11,15 @@ import Thankyou from './assets/thankyou.svg';
 
 function App() {
   const [currentComponent, setCurrentComponent] = useState(0);
+  const [moneyArcade, setMoneyArcade] = useState(9)
+  const [moneyAdvenced, setMoneyAdvenced] = useState(12)
+  const [moneyPro, setMoneyPro] = useState(15)
+  const [year, setYear] = useState(false)
 
+
+  function toggleYear() {
+    setYear(!year)
+  }
   function nextComponent() {
     setCurrentComponent(currentComponent + 1)
   };
@@ -25,9 +33,12 @@ function App() {
       case 0:
         return <Personal onNext={nextComponent} />
       case 1:
-        return <Select onNext={nextComponent} onBack={prevComponent} Arcade={Arcade} Advenced={Advenced} Pro={Pro} />
+        return <Select onNext={nextComponent} onBack={prevComponent} toggleYear={toggleYear}
+      moneyArcade={moneyArcade} moneyAdvenced={moneyAdvenced} moneyPro={moneyPro} Arcade={Arcade} Advenced={Advenced} Pro={Pro} />
       case 2:
-        return <Pick onNext={nextComponent} onBack={prevComponent} />
+        return <Pick onNext={nextComponent} onBack={prevComponent} year={year}
+          moneyArcade={moneyArcade} moneyAdvenced={moneyAdvenced} moneyPro={moneyPro}
+        />
       case 3:
         return <Summary onBack={prevComponent} />
       default:

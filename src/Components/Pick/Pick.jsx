@@ -1,10 +1,17 @@
 import './Pick.css';
 import { useState } from 'react';
 
-function Pick({onBack, onNext}) {
+function Pick({ onBack, onNext, year }) {
     const [isChecked, setIsChecked] = useState(false)
     const [isCheckedTwo, setIsCheckedTwo] = useState(false)
     const [isCheckedThree, setIsCheckedThree] = useState(false)
+
+
+    const onlineService = year ? 10 : 1
+    const largerStorage = year ? 20 : 2
+    const customizableProfile = year ? 20 : 2
+
+
 
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
@@ -70,9 +77,9 @@ function Pick({onBack, onNext}) {
                     <div className='PICK-CHATBOXES'>
                         <div className='PICKS'>
                             <div className='CHATBOX'>
-                                <label class="container">
+                                <label className="container">
                                     <input type="checkbox" checked={isChecked} onChange={handleCheckboxChange}></input>
-                                    <span class="checkmark"></span>
+                                    <span className="checkmark"></span>
                                 </label>
                             </div>
                             <div className='PICK-TXT'>
@@ -80,7 +87,7 @@ function Pick({onBack, onNext}) {
                                 <p>Access to multiplayer games</p>
                             </div>
                             <div className='PICK-PRICES'>
-                                <p>+$10/yr</p>
+                                <p>{onlineService}</p>
                             </div>    
                         </div>
                         <div className='PICKS'>
@@ -91,26 +98,26 @@ function Pick({onBack, onNext}) {
                                 </label>
                             </div>
                             <div className='PICK-TXT'>
-                                <p><strong>Online services</strong></p>
+                                <p><strong>Larger Storage</strong></p>
                                 <p>Access to multiplayer games</p>
                             </div>
                             <div className='PICK-PRICES'>
-                                <p>+$10/yr</p>
+                                <p>{largerStorage}</p>
                             </div>    
                         </div>
                         <div className='PICKS'>
                             <div className='CHATBOX'>
-                                <label class="container">
+                                <label className="container">
                                     <input type="checkbox" checked={isCheckedThree} onChange={handleCheckboxChangeThree}></input>
-                                    <span class="checkmark"></span>
+                                    <span className="checkmark"></span>
                                 </label>
                             </div>
                             <div className='PICK-TXT'>
-                                <p><strong>Online services</strong></p>
+                                <p><strong>Customizable Profile</strong></p>
                                 <p>Access to multiplayer games</p>
                             </div>
                             <div className='PICK-PRICES'>
-                                <p>+$10/yr</p>
+                                <p>{customizableProfile}</p>
                             </div>    
                         </div>
                     </div>
