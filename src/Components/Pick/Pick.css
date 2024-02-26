@@ -22,6 +22,20 @@
     display: flex;
 }
 
+.next {
+    color: white;
+    background-color: navy;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+  
+input[type="checkbox"] {
+    width: 1em;
+    height: 3rem;
+    accent-color: rgb(181, 87, 244);
+  }
+  
 
 
 

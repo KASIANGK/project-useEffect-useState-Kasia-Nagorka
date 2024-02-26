@@ -1,7 +1,7 @@
 import './Select.css'
 import {useState} from 'react'
 
-function Select({Arcade, Advenced, Pro}) {
+function Select({Arcade, Advenced, Pro, onNext, onBack}) {
 
     const [moneyArcade, setMoneyArcade] = useState(9)
     const [moneyAdvenced, setMoneyAdvenced] = useState(12)
@@ -23,44 +23,46 @@ function Select({Arcade, Advenced, Pro}) {
 
     return (
         <div className='SELECT'>
-            <div className='STEP'>
-                <div className='STEPS'>
-                    <div className='STEPS-NUMBER'>
-                        <p>1</p>
+            <div className='STEP-CONTENT'>
+                <div className='STEP'>
+                    <div className='STEPS'>
+                        <div className='STEPS-NUMBER'>
+                            <p>1</p>
+                        </div>
+                        <div className='STEPS_TXT'>
+                            <h6>STEP 1</h6>
+                            <h3>YOUR INFO</h3>
+                        </div>
                     </div>
-                    <div className='STEPS_TXT'>
-                        <h6>STEP 1</h6>
-                        <h3>YOUR INFO</h3>
-                    </div>
-                </div>
 
-                <div className='STEPS'>
-                    <div className='STEPS-NUMBER'>
-                        <p>2</p>
+                    <div className='STEPS'>
+                        <div className='STEPS-NUMBER'>
+                            <p>2</p>
+                        </div>
+                        <div className='STEPS_TXT'>
+                            <h6>STEP 2</h6>
+                            <h3>SELECT PLAN</h3>
+                        </div>
                     </div>
-                    <div className='STEPS_TXT'>
-                        <h6>STEP 2</h6>
-                        <h3>SELECT PLAN</h3>
-                    </div>
-                </div>
 
-                <div className='STEPS'>
-                    <div className='STEPS-NUMBER'>
-                        <p>3</p>
+                    <div className='STEPS'>
+                        <div className='STEPS-NUMBER'>
+                            <p>3</p>
+                        </div>
+                        <div className='STEPS_TXT'>
+                            <h6>STEP 3</h6>
+                            <h3>ADD-ONS</h3>
+                        </div>
                     </div>
-                    <div className='STEPS_TXT'>
-                        <h6>STEP 3</h6>
-                        <h3>ADD-ONS</h3>
-                    </div>
-                </div>
 
-                <div className='STEPS'>
-                    <div className='STEPS-NUMBER'>
-                        <p>4</p>
-                    </div>
-                    <div className='STEPS_TXT'>
-                        <h6>SUMMARY</h6>
-                        <h3>YOUR INFO</h3>
+                    <div className='STEPS'>
+                        <div className='STEPS-NUMBER'>
+                            <p>4</p>
+                        </div>
+                        <div className='STEPS_TXT'>
+                            <h6>SUMMARY</h6>
+                            <h3>YOUR INFO</h3>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -110,8 +112,8 @@ function Select({Arcade, Advenced, Pro}) {
                         <p>Yearly</p>
                     </div>
                     <div className='SELECT-BTNS'>
-                        <button>Go Back</button>
-                        <button>Next Stop</button>
+                        <button className='back' onClick={onBack}>Go Back</button>
+                        <button className='next' onClick={onNext} >Next steps</button>
                     </div>
                 </div>
             </div>

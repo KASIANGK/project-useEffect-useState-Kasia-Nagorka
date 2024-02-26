@@ -1,13 +1,19 @@
 .STEP {
-    background-image: url(../../assets/sidebar.svg);
-    background-size: cover;
-    color: white;
-    width: 20vw;
-    /* height: 60vh; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background-image: url(../../assets/sidebar.svg);
+  background-size: cover;
+  color: white;
+  width: 200px;
+  height: 63vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  background-position: 25% 0%;
+}
+.STEP-CONTENT {
+  display: flex;
+  width: 32vw;
+  justify-content: center;
+  align-items: center;
 }
 .SELECT {
     display: flex;
@@ -73,6 +79,14 @@
 }
 .SELECT-BTNS {
     display: flex;
+}
+.back {
+  color: navy;
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
 }
 
 

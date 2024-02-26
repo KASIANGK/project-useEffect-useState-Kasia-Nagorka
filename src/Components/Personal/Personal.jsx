@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import './Personal.css';
+import { useState } from 'react'
+import './Personal.css'
 
-function Personal({Sidebar}) {
+function Personal({onNext}) {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
@@ -66,7 +66,7 @@ function Personal({Sidebar}) {
                         <input placeholder='e.g. +1 234 567 890' type='text' value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)}></input>
                     </div>
                     <div className='PERSONAL-BTN'>
-                        <button>Next Step</button>
+                        <button className='next' onClick={onNext} >Next steps</button>
                     </div>
                 </div>
             </div>
