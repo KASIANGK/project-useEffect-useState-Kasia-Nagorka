@@ -8,11 +8,14 @@ function Select({ Arcade, Advenced, Pro, onNext, onBack, toggleYear, setChoice, 
     const [moneyPro, setMoneyPro] = useState(15);
     const [year, setYear] = useState(false);
     const [selectedDiv, setSelectedDiv] = useState('');
+    const [total, setTotal] = useState(0);
 
 
 
     function btnToggle() {
+        toggleYear()
         if (year) {
+            
                     setMoneyArcade(9);
                     setMoneyAdvenced(12);
                     setMoneyPro(15);
@@ -27,8 +30,16 @@ function Select({ Arcade, Advenced, Pro, onNext, onBack, toggleYear, setChoice, 
 
     function handleDivSelection(div) {
         setSelectedDiv(div);
+        let total = 0;
+        if (div === 'Arcade') {
+            total = year ? moneyArcade * 12 : moneyArcade;
+        } else if (div === 'Advanced') {
+            total = year ? moneyAdvenced * 12 : moneyAdvenced;
+        } else if (div === 'Pro') {
+            total = year ? moneyPro * 12 : moneyPro;
+        }
+        setTotal(total);
     }
-
 
     return (
         <div className='SELECT'>
