@@ -1,18 +1,19 @@
 import './Pick.css';
 import { useState } from 'react';
 
-function Pick({ onBack, onNext, year }) {
+function Pick({ onBack, onNext, year}) {
     const [isChecked, setIsChecked] = useState(false)
     const [isCheckedTwo, setIsCheckedTwo] = useState(false)
     const [isCheckedThree, setIsCheckedThree] = useState(false)
 
 
+// affichage ternaire pour annee sinon mois
     const onlineService = year ? 10 : 1
     const largerStorage = year ? 20 : 2
     const customizableProfile = year ? 20 : 2
 
 
-
+// cocher, decocher checkbox
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
     };
@@ -22,6 +23,10 @@ function Pick({ onBack, onNext, year }) {
     const handleCheckboxChangeThree = () => {
         setIsCheckedThree(!isCheckedThree)
     }
+
+    // const checkValue = () => {
+
+    // }
 
     return (
         <div className='PICK'>

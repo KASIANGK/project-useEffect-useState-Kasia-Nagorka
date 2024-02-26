@@ -1,31 +1,34 @@
-import './Select.css'
-import {useState} from 'react'
+import Summary from '../Summary/Summary';
+import './Select.css';
+import { useState } from 'react';
 
-function Select({Arcade, Advenced, Pro, onNext, onBack, toggleYear}) {
+function Select({ Arcade, Advenced, Pro, onNext, onBack, toggleYear, setChoice, choice}) {
+    const [moneyArcade, setMoneyArcade] = useState(9);
+    const [moneyAdvenced, setMoneyAdvenced] = useState(12);
+    const [moneyPro, setMoneyPro] = useState(15);
+    const [year, setYear] = useState(false);
+    const [selectedDiv, setSelectedDiv] = useState('');
 
-    const [moneyArcade, setMoneyArcade] = useState(9)
-    const [moneyAdvenced, setMoneyAdvenced] = useState(12)
-    const [moneyPro, setMoneyPro] = useState(15)
-    const [year, setYear] = useState(false)
 
-
-    // const [onlineService, setOnlineService] = useState(1)
-    // const [largerStorage, setLargerStorage] = useState[2]
-    // const [customizableProfile, setCustomizableProfile] = useState[2]
 
     function btnToggle() {
-        toggleYear()
-                if (year) {
-                    setMoneyArcade(9)
-                    setMoneyAdvenced(12)
-                    setMoneyPro(15)
+        if (year) {
+                    setMoneyArcade(9);
+                    setMoneyAdvenced(12);
+                    setMoneyPro(15);
                 } else {
-                    setMoneyArcade(moneyArcade * 10)
-                    setMoneyAdvenced(moneyAdvenced * 10)
-                    setMoneyPro(moneyPro * 10)
+                    setMoneyArcade(moneyArcade * 10);
+                    setMoneyAdvenced(moneyAdvenced * 10);
+                    setMoneyPro(moneyPro * 10);
                 }
                 setYear(!year)
-            }
+                setChoice(choice === 'monthly' ? 'yearly' : 'monthly');
+    }
+
+    function handleDivSelection(div) {
+        setSelectedDiv(div);
+    }
+
 
     return (
         <div className='SELECT'>
@@ -79,7 +82,7 @@ function Select({Arcade, Advenced, Pro, onNext, onBack, toggleYear}) {
                         <p>You have the option of monthly or yearly billing.</p>
                     </div>
                     <div className='SELECT-CHOICE'>
-                        <div className='ABO'>
+                        <div className={`ABO ${selectedDiv === 'Arcade' ? 'selected' : ''}`} onClick={() => handleDivSelection('Arcade')}>
                             <div className='ARCADE'>
                                 <img src={Arcade}></img>
                             </div>
@@ -88,7 +91,7 @@ function Select({Arcade, Advenced, Pro, onNext, onBack, toggleYear}) {
                                 <p>{moneyArcade}</p>
                             </div>
                         </div>
-                        <div className='ABO'>
+                        <div className={`ABO ${selectedDiv === 'Advanced' ? 'selected' : ''}`} onClick={() => handleDivSelection('Advanced')}>
                             <div className='ADVANCED'>
                                 <img src={Advenced}></img>
                             </div>
@@ -97,7 +100,7 @@ function Select({Arcade, Advenced, Pro, onNext, onBack, toggleYear}) {
                                 <p>{moneyAdvenced}</p>
                             </div>
                         </div>
-                        <div className='ABO'>
+                        <div className={`ABO ${selectedDiv === 'Pro' ? 'selected' : ''}`} onClick={() => handleDivSelection('Pro')}>
                             <div className='PRO'>
                                 <img src={Pro}></img>
                             </div>
@@ -110,16 +113,16 @@ function Select({Arcade, Advenced, Pro, onNext, onBack, toggleYear}) {
                     <div className='SELECT-TOGGLE-SWITCH'>
                         <p>Monthly</p>
                         <div className='TOGGLE-BTN'>
-                            <label class="switch">
+                            <label className="switch">
                             <input type="checkbox" onClick={btnToggle}></input>
-                            <span class="slider round"></span>
+                            <span className="slider round"></span>
                             </label>
                         </div>
                         <p>Yearly</p>
                     </div>
                     <div className='SELECT-BTNS'>
                         <button className='back' onClick={onBack}>Go Back</button>
-                        <button className='next' onClick={onNext} >Next steps</button>
+                        <button className='next' onClick={onNext}>Next steps</button>
                     </div>
                 </div>
             </div>

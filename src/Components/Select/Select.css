@@ -160,3 +160,9 @@
   .slider.round:before {
     border-radius: 50%;
   }
+
+
+
+  .selected {
+    background-color: rgba(0, 0, 0, 0.108);
+  }

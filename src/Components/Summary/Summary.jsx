@@ -1,7 +1,8 @@
 import './Summary.css'
 import { useState } from 'react'
 
-function Summary({onBack, onNext}) {
+function Summary({onBack, onNext, selectedSubscription, moneyAdvenced, moneyArcade, moneyPro, choice}) {
+    console.log(choice)
     return (
         <div className='SUMMARY'>
             <div className='STEP-CONTENT'>
@@ -56,11 +57,11 @@ function Summary({onBack, onNext}) {
                     <div className='SUMMARY-PRO'>
                         <div className='MONTHLY'>
                             <div className='PRO-MONTHLY'>
-                                <p><strong>Pro(Monthly)</strong></p>
+                                <p><strong>(Monthly)</strong></p>
                                 <p>Change</p>
                             </div>
                             <div className='PRO-PRICE'>
-                                <p>PRICE</p>
+                                <p>{choice}</p>
                             </div>
                         </div>
                         <div className='BARRE'>
@@ -68,7 +69,7 @@ function Summary({onBack, onNext}) {
                         </div>
                         <div className='SUMMARY-ONLINE'>
                             <p>Online service</p>
-                            <p>+$1/mo</p>
+                            <p className='SUMMARY-SERVICES'>+$1/mo</p>
                         </div>
                     </div>
                 </div>

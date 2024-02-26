@@ -15,6 +15,15 @@ function App() {
   const [moneyAdvenced, setMoneyAdvenced] = useState(12)
   const [moneyPro, setMoneyPro] = useState(15)
   const [year, setYear] = useState(false)
+  const [selectedSubscription, setSelectedSubscription] = useState('')
+  const [choice, setChoice] = useState('monthly');
+
+
+  
+  function selectionAbo(subscriptionType) {
+    setSelectedSubscription(subscriptionType)
+    setCurrentComponent(currentComponent + 1)
+}
 
 
   function toggleYear() {
@@ -22,25 +31,25 @@ function App() {
   }
   function nextComponent() {
     setCurrentComponent(currentComponent + 1)
-  };
+  }
 
   function prevComponent() {
     setCurrentComponent(currentComponent - 1)
-  };
+  }
 
   function renderComponent () {
     switch (currentComponent) {
       case 0:
         return <Personal onNext={nextComponent} />
       case 1:
-        return <Select onNext={nextComponent} onBack={prevComponent} toggleYear={toggleYear}
+        return <Select choice={choice} setChoice={setChoice} onNext={(subscription) => selectionAbo(subscription)} onBack={prevComponent} toggleYear={toggleYear} 
       moneyArcade={moneyArcade} moneyAdvenced={moneyAdvenced} moneyPro={moneyPro} Arcade={Arcade} Advenced={Advenced} Pro={Pro} />
       case 2:
         return <Pick onNext={nextComponent} onBack={prevComponent} year={year}
           moneyArcade={moneyArcade} moneyAdvenced={moneyAdvenced} moneyPro={moneyPro}
         />
       case 3:
-        return <Summary onBack={prevComponent} />
+        return <Summary choice={choice} onBack={prevComponent} selectedSubscription={selectedSubscription}/>
       default:
         return null;
     }
