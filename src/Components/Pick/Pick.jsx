@@ -7,6 +7,15 @@ function Pick({ onBack, onNext, year, setSubscriptions, subscription}) {
     const [isCheckedThree, setIsCheckedThree] = useState(false)
     const [userInput, setUserInput] = useState('');
     const [userValues, setUserValues] = useState([])
+    const [message, setMessage] = useState('')
+
+
+//exemple test
+  const handleChange = event => {
+    setMessage(event.target.value);
+
+    console.log('value is:', event.target.value);
+  };
 
 
 // affichage ternaire pour annee sinon mois
@@ -91,7 +100,7 @@ function Pick({ onBack, onNext, year, setSubscriptions, subscription}) {
                         <div className='PICKS'>
                             <div className='CHATBOX'>
                                 <label className="container">
-                                    <input type="checkbox" checked={isChecked} onChange={handleCheckboxChange}></input>
+                                    <input type="checkbox" checked={isChecked} onChange={handleAddValue} onClick={handleCheckboxChange}></input>
                                     <span className="checkmark"></span>
                                 </label>
                             </div>
