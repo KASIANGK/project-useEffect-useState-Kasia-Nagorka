@@ -7,11 +7,27 @@ function Select({ Arcade, Advenced, Pro, onNext, onBack, toggleYear, setChoice, 
     const [moneyAdvenced, setMoneyAdvenced] = useState(12);
     const [moneyPro, setMoneyPro] = useState(15);
     const [year, setYear] = useState(false);
-    const [selectedDiv, setSelectedDiv] = useState('');
+    const [selectedDiv, setSelectedDiv] = useState(null);
     const [total, setTotal] = useState(0);
     const [selectedSubscription, setSelectedSubscription] = useState(null);
 
+    const [subscriptions, setSubscriptions] = useState([]); 
 
+
+    const handleSubscriptionClick = (subscriptionName, subscriptionPrice) => {
+        
+        const subscription = {
+            name: subscriptionName,
+            price: year ? subscriptionPrice * 10 : subscriptionPrice 
+        };
+
+        setSelectedSubscription(subscription);
+        setSelectedDiv(selectedDiv);
+
+        setSubscriptions([...subscriptions, subscription])
+
+        console.log(subscription)
+    }
 
 
     function btnToggle() {
@@ -28,17 +44,17 @@ function Select({ Arcade, Advenced, Pro, onNext, onBack, toggleYear, setChoice, 
                 }
                 setYear(!year)
                 setChoice(choice === 'monthly' ? 'yearly' : 'monthly');
-    }
+            }
 
 
-    const handleSubscriptionClick = (subscription) => {
-        setSelectedSubscription(subscription);
-        setSelectedDiv(subscription); 
+    // const handleSubscriptionClick = (subscription) => {
+    //     setSelectedSubscription(subscription);
+    //     setSelectedDiv(selectedDiv); 
+    //     console.log(selectedDiv)
 
-        console.log(subscription)
-    };
+    //     console.log(subscription)
+    // };
     
-
 
     return (
         <div className='SELECT'>
@@ -92,8 +108,8 @@ function Select({ Arcade, Advenced, Pro, onNext, onBack, toggleYear, setChoice, 
                         <p>You have the option of monthly or yearly billing.</p>
                     </div>
                     <div className='SELECT-CHOICE'>
-                        <div className={`ABO ${selectedDiv === 'Arcade' ? 'selected' : ''}`}
-                        onClick={() => handleSubscriptionClick({moneyArcade})}>
+                        <div className={selectedDiv ? 'selected' : 'ABO'}
+                        onClick={() => handleSubscriptionClick("Arcade", moneyArcade)}>
                             <div className='ARCADE'>
                                 <img src={Arcade}></img>
                             </div>
@@ -136,7 +152,6 @@ function Select({ Arcade, Advenced, Pro, onNext, onBack, toggleYear, setChoice, 
                     <div className='SELECT-BTNS'>
                         <button className='back' onClick={onBack}>Go Back</button>
                         <button className='next' onClick={onNext}>Next steps</button>
-                   
                     </div>
                 </div>
             </div>
