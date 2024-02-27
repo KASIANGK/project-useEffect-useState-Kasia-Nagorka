@@ -15,15 +15,19 @@ function App() {
   const [moneyAdvenced, setMoneyAdvenced] = useState(12)
   const [moneyPro, setMoneyPro] = useState(15)
   const [year, setYear] = useState(false)
-  // const [selectedSubscription, setSelectedSubscription] = useState('')
   const [choice, setChoice] = useState('monthly');
+  const [selectedSubscription, setSelectedSubscription] = useState(null);
 
 
-    const [total, setTotal] = useState(0); 
 
-    function handleTotalAmountChange(amount) {
-        setTotal(amount);
-    }
+  
+  const [total, setTotal] = useState(0); 
+
+  
+
+  const handleNext = (subscription) => {
+    setSelectedSubscription(subscription);
+  }
 
 
 
@@ -44,8 +48,8 @@ function App() {
       case 0:
         return <Personal onNext={nextComponent} />
       case 1:
-        return <Select onTotalAmountChange={handleTotalAmountChange}
-        choice={choice} setChoice={setChoice} onNext={nextComponent} onBack={prevComponent} toggleYear={toggleYear} 
+        return <Select 
+        choice={choice} setChoice={setChoice} onNext={nextComponent} handleNext={handleNext} onBack={prevComponent} toggleYear={toggleYear} 
       moneyArcade={moneyArcade} moneyAdvenced={moneyAdvenced} moneyPro={moneyPro} Arcade={Arcade} Advenced={Advenced} Pro={Pro} />
       case 2:
         return <Pick onNext={nextComponent} onBack={prevComponent} year={year}
@@ -53,7 +57,9 @@ function App() {
         />
       case 3:
         return <Summary
-        total={total} choice={choice} onBack={prevComponent}/>
+        selectedSubscription={selectedSubscription}
+        total={total} choice={choice} onBack={prevComponent} 
+        moneyAdvenced={moneyAdvenced} moneyArcade={moneyArcade} moneyPro={moneyPro}/>
       default:
         return null;
     }
