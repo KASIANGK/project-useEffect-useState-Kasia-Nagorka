@@ -1,11 +1,34 @@
 import './Summary.css'
 import { useState } from 'react'
 
-function Summary({onBack, onNext, moneyPro, moneyAdvanced, moneyArcade, choice, total, setSelectedSubscription}) {
+function Summary({onBack, onNext, moneyPro,choice, total, subscription, setSubscriptions, subscriptions,
+    setSelectedSubscription}) {
     console.log("choix" + choice)
     console.log("total" + total)
     console.log("money" + moneyPro);
-    console.log(setSelectedSubscription)
+
+
+ 
+    // const handleSubscriptionClick = (subscriptionName, subscriptionPrice) => {
+        
+    //     const subscription = {
+    //         name: subscriptionName,
+    //         price: subscriptionPrice 
+    //     };
+
+    //     setSelectedSubscription(subscription);
+    //     setSelectedDiv(selectedDiv);
+
+    //     setSubscriptions([...subscriptions, subscription])
+
+    //     console.log(subscription)
+    //     console.log(subscription.price);
+    // }
+
+
+
+
+   
     return (
         <div className='SUMMARY'>
             <div className='STEP-CONTENT'>
@@ -64,7 +87,7 @@ function Summary({onBack, onNext, moneyPro, moneyAdvanced, moneyArcade, choice, 
                                 <p>Change</p>
                             </div>
                             <div className='PRO-PRICE'>
-                                <p>{setSelectedSubscription}</p>
+                                <p> texte a afficher : {}</p>
                             </div>
                         </div>
                         <div className='BARRE'>

@@ -1,10 +1,12 @@
 import './Pick.css';
 import { useState } from 'react';
 
-function Pick({ onBack, onNext, year}) {
+function Pick({ onBack, onNext, year, setSubscriptions, subscription}) {
     const [isChecked, setIsChecked] = useState(false)
     const [isCheckedTwo, setIsCheckedTwo] = useState(false)
     const [isCheckedThree, setIsCheckedThree] = useState(false)
+    const [userInput, setUserInput] = useState('');
+    const [userValues, setUserValues] = useState([])
 
 
 // affichage ternaire pour annee sinon mois
@@ -24,9 +26,15 @@ function Pick({ onBack, onNext, year}) {
         setIsCheckedThree(!isCheckedThree)
     }
 
-    // const checkValue = () => {
+    const handleInputChange = (e) => {
+        setUserInput(e.target.value); 
+    };
 
-    // }
+    const handleAddValue = () => {
+        setUserValues([...userValues, userInput])
+        setUserInput('')
+    };
+
 
     return (
         <div className='PICK'>

@@ -18,8 +18,24 @@ function App() {
   const [choice, setChoice] = useState('monthly');
   const [selectedSubscription, setSelectedSubscription] = useState(null);
 
+  const [subscriptions, setSubscriptions] = useState([]); 
 
 
+  const handleSubscriptionClick = (subscriptionName, subscriptionPrice) => {
+      
+      const subscription = {
+          name: subscriptionName,
+          price: year ? subscriptionPrice * 10 : subscriptionPrice 
+      };
+
+      setSelectedSubscription(subscription);
+      setSelectedDiv(selectedDiv);
+
+      setSubscriptions([...subscriptions, subscription])
+
+      console.log(subscription)
+  }
+  
   
   const [total, setTotal] = useState(0); 
 
@@ -48,16 +64,19 @@ function App() {
       case 0:
         return <Personal onNext={nextComponent} />
       case 1:
-        return <Select 
+        return <Select handleSubscriptionClick={handleSubscriptionClick}
         choice={choice} setChoice={setChoice} onNext={nextComponent} handleNext={handleNext} onBack={prevComponent} toggleYear={toggleYear} 
       moneyArcade={moneyArcade} moneyAdvenced={moneyAdvenced} moneyPro={moneyPro} Arcade={Arcade} Advenced={Advenced} Pro={Pro} />
       case 2:
-        return <Pick onNext={nextComponent} onBack={prevComponent} year={year}
+        return <Pick subscriptions={subscriptions} setSubscriptions={setSubscriptions}
+        handleSubscriptionClick={handleSubscriptionClick} onNext={nextComponent} onBack={prevComponent} year={year}
           moneyArcade={moneyArcade} moneyAdvenced={moneyAdvenced} moneyPro={moneyPro}
         />
       case 3:
-        return <Summary
-        selectedSubscription={selectedSubscription}
+        return <Summary  handleSubscriptionClick={handleSubscriptionClick} setSubscriptions={setSubscriptions}
+        subscriptions={subscriptions}
+        setSelectedSubscription={setSelectedSubscription}
+        selectedSubscription={selectedSubscription} 
         total={total} choice={choice} onBack={prevComponent} 
         moneyAdvenced={moneyAdvenced} moneyArcade={moneyArcade} moneyPro={moneyPro}/>
       default:

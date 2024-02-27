@@ -18,7 +18,7 @@ function Select({ Arcade, Advenced, Pro, onNext, onBack, toggleYear, setChoice, 
         
         const subscription = {
             name: subscriptionName,
-            price: year ? subscriptionPrice * 10 : subscriptionPrice 
+            price: subscriptionPrice 
         };
 
         setSelectedSubscription(subscription);
@@ -28,6 +28,8 @@ function Select({ Arcade, Advenced, Pro, onNext, onBack, toggleYear, setChoice, 
 
         console.log(subscription)
     }
+
+    
 
 
     function btnToggle() {
@@ -115,26 +117,26 @@ function Select({ Arcade, Advenced, Pro, onNext, onBack, toggleYear, setChoice, 
                             </div>
                             <div className='ABO-TXT'>
                                 <p><strong>Arcade</strong></p>
-                                <p>{moneyArcade}</p>
+                                <p>{moneyArcade} </p>
                             </div>
                         </div>
                         <div className={`ABO ${selectedDiv === 'Advanced' ? 'selected' : ''}`} 
-                        onClick={() => handleSubscriptionClick({moneyAdvenced})}>
+                        onClick={() => handleSubscriptionClick("Advanced", moneyAdvenced)}>
                             <div className='ADVANCED'>
                                 <img src={Advenced}></img>
                             </div>
                             <div className='ABO-TXT'>
-                                <p><strong>Arcade</strong></p>
+                                <p><strong>Advanced</strong></p>
                                 <p>{moneyAdvenced}</p>
                             </div>
                         </div>
                         <div className={`ABO ${selectedDiv === 'Pro' ? 'selected' : ''}`} 
-                    onClick={() => handleSubscriptionClick({moneyPro})}>
+                    onClick={() => handleSubscriptionClick("Pro", moneyPro)}>
                             <div className='PRO'>
                                 <img src={Pro}></img>
                             </div>
                             <div className='ABO-TXT'>
-                                <p><strong>Arcade</strong></p>
+                                <p><strong>Pro</strong></p>
                                 <p>{moneyPro}</p>
                             </div>
                         </div>
